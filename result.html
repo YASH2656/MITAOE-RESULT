@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MITAOE Result Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>MITAOE Result Portal</h2>
+    <form id="resultForm">
+      <input type="email" id="email" placeholder="Institute Email ID" required />
+      <input type="text" id="prn" placeholder="PRN Number" required />
+      <input type="password" id="password" placeholder="Password (Roll No.)" required />
+      <button type="submit">Download Result</button>
+      <div class="error" id="errorMsg"></div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("resultForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const prn = document.getElementById("prn").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (
+        email === "202401040179@mitaoe.ac.in" &&
+        prn === "202401040179" &&
+        password === "CS4-68"
+      ) {
+        window.location.href = "Professional_MITAOE_Result_Yash_Galande_SGPA_9.20.docx";
+      } else {
+        document.getElementById("errorMsg").textContent = "Invalid credentials. Please try again.";
+      }
+    });
+  </script>
+</body>
+</html>
